@@ -1,0 +1,24 @@
+modLoader="javafml"
+loaderVersion="[20,)"
+license="MIT"
+
+[[mods]]
+modId="colormix"
+version="1.2.0"
+displayName="Color Mixing"
+authors="NonKungCh"
+description="Dynamic color mixing for Minecraft 1.20.6 Created by NonKungCh."
+
+[[dependencies.colormix]]
+modId="neoforge"
+type="required"
+version="[20,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.colormix]]
+modId="minecraft"
+type="required"
+version="[1.20.6)"
+ordering="NONE"
+side="BOTH"
