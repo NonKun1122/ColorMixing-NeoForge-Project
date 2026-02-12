@@ -1,0 +1,57 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'net.neoforged.gradle.userdev' version '7.0.145'
+}
+
+version = '1.1.0'
+group = 'com.nonkungch.colormix'
+
+base {
+    archivesName = 'colormix'
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+runs {
+    configureEach {
+        systemProperty 'forge.logging.markers', 'REGISTRIES'
+        systemProperty 'forge.logging.console.level', 'debug'
+        modSource project.sourceSets.main
+    }
+    client {
+        systemProperty 'neoforge.enabledGameTestNamespaces', 'colormix'
+    }
+    server {
+        systemProperty 'neoforge.enabledGameTestNamespaces', 'colormix'
+        programArgument '--nogui'
+    }
+}
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+dependencies {
+    implementation "net.neoforged:neoforge:20.4.237"
+}
+
+tasks.withType(ProcessResources).configureEach {
+    var replaceProperties = [
+            minecraft_version      : "1.20.6",
+            minecraft_version_range: "[1.20.6)",
+            neo_version            : "20.4.237",
+            loader_version_range   : "[2,)",
+            mod_id                 : "colormix",
+            mod_name               : "Color Mixing",
+            mod_license            : "MIT",
+            mod_version            : "1.2.0",
+    ]
+    inputs.properties replaceProperties
+
+    filesMatching(['META-INF/neoforge.mods.toml', 'META-INF/mods.toml']) {
+        expand replaceProperties
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
