@@ -7,7 +7,7 @@ modId="colormix"
 version="2.1.0"
 displayName="Color Mixing"
 authors="NonKungCh"
-description="Dynamic color mixing for Minecraft 1.21 Created by NonKungCh."
+description="Dynamic color mixing for Minecraft 1.21.1 Created by NonKungCh."
 
 [[dependencies.colormix]]
 modId="neoforge"
