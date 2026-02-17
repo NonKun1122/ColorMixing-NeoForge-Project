@@ -1,24 +1,24 @@
 modLoader="javafml"
-loaderVersion="[21,)"
-license="MIT"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
 
 [[mods]]
-modId="colormix"
-version="2.2.0"
-displayName="Color Mixing"
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
 authors="NonKungCh"
 description="Dynamic color mixing for Minecraft 1.21+ Created by NonKungCh."
 
 [[dependencies.colormix]]
 modId="neoforge"
 type="required"
-version="[21,)"
+version="${neo_version}"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.colormix]]
 modId="minecraft"
 type="required"
-versionRange="[1.21,1.21.12)"
+versionRange="${minecraft_version_range}"
 ordering="NONE"
 side="BOTH"
