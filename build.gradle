@@ -11,7 +11,7 @@ base {
     archivesName = 'colormix'
 }
 
-// Minecraft 1.21.1 บังคับใช้ Java 21
+// Minecraft 1.21.1 ต้องการ Java 21
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 runs {
@@ -34,7 +34,7 @@ runs {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-    // ใช้ NeoForge เวอร์ชันล่าสุดสำหรับ 1.21.1
+    // อัปเดตเป็น NeoForge สำหรับ 1.21.1
     implementation "net.neoforged:neoforge:21.1.115"
 }
 
